@@ -11,6 +11,7 @@ import iconPinterest from './icon-pinterest.svg';
 import iconTwitter from './icon-twitter.svg';
 import illustrationWorking from './illustration-working.svg';
 import logo from './logo.svg';
+import footerLogo from './footer-logo.svg';
 
 export {
   bgBoostDesktop,
@@ -26,4 +27,5 @@ export {
   iconTwitter,
   illustrationWorking,
   logo,
+  footerLogo,
 };

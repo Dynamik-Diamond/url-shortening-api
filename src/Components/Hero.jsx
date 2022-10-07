@@ -2,7 +2,7 @@ import { illustrationWorking } from '../assets/images/Index';
 
 const Hero = () => {
   return (
-    <section className=" p-6">
+    <section className=" section-min-height grid place-content-center p-6">
       <div className="mx-auto mb-12 flex max-w-6xl flex-col-reverse items-center justify-center gap-8 sm:flex-row sm:gap-16">
         <article className="sm:w-1/2">
           <h1 className="max-w-4xl text-center text-5xl  font-bold sm:text-left sm:text-7xl ">

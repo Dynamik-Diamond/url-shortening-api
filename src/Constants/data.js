@@ -26,7 +26,7 @@ export const navLinks = [
 export const footerLinks = [
   {
     title: 'Features',
-    link: [
+    links: [
       {
         linkName: 'Link shortening',
         href: '#',
@@ -43,7 +43,7 @@ export const footerLinks = [
   },
   {
     title: 'Resources',
-    link: [
+    links: [
       {
         linkName: 'Blog',
         href: '#',
@@ -60,7 +60,7 @@ export const footerLinks = [
   },
   {
     title: 'Company',
-    link: [
+    links: [
       {
         linkName: 'About',
         href: '#',

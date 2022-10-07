@@ -13,7 +13,7 @@ const NavBar = () => {
         aria-label="main"
       >
         <div className="flex items-center gap-10">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="Shortly" />
           <ul className="hidden items-center sm:flex ">
             {navLinks.map((links, index) => {
               return (

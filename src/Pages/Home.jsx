@@ -4,7 +4,7 @@ import Boost from '../Components/Boost';
 
 const Home = () => {
   return (
-    <main>
+    <main className="relative">
       <Hero />
       <Stats />
       <Boost />
