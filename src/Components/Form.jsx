@@ -12,9 +12,9 @@ const form = () => {
         <input
           type="text"
           placeholder="Shorten a link here..."
-          className="w-full rounded-lg py-2 pl-4 sm:w-4/5 "
+          className="w-full rounded-md py-2 pl-4 sm:w-4/5 "
         />
-        <button className="items mt-4 flex w-full flex-1 rounded-lg bg-Cyan py-2 px-4 text-xl text-white hover:bg-opacity-70 sm:mx-0 sm:mt-0">
+        <button className="items mt-4 flex w-full flex-1 rounded-md bg-Cyan py-2 px-4 text-xl text-white hover:bg-opacity-70 sm:mx-0 sm:mt-0">
           <a href="#" className=" mx-auto">
             Shorten It!
           </a>
