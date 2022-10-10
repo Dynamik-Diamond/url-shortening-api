@@ -7,7 +7,7 @@ const NavBar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <header className="sticky top-0 z-10">
+    <header>
       <nav
         className="mx-auto flex max-w-6xl items-center justify-between p-4"
         aria-label="main"

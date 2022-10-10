@@ -1,56 +1,55 @@
-import { useReducer, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Form from './Form';
 import StatsCard from './StatsCard';
-import { reducer } from '../reducer';
 
-const defaultState = {
-  urls: [],
-  errorStatus: false,
-  errorMessage: '',
+const getLocalStorage = () => {
+  let urls = localStorage.getItem('urls');
+  if (urls) {
+    return JSON.parse(localStorage.getItem('urls'));
+  } else {
+    return [];
+  }
 };
 
 const Stats = () => {
-  const [url, setUrl] = useState('');
-  const [state, dispatch] = useReducer(
-    reducer,
-    defaultState,
-  );
+  const [urls, setUrls] = useState(getLocalStorage());
+
+  const [newUrl, setNewUrl] = useState('');
+
+  const addUrl = url => {
+    const id = urls.length
+      ? urls[urls.length - 1].id + 1
+      : 1;
+
+    const myNewUrl = { id, url };
+    const listUrls = [...urls, myNewUrl];
+    setUrls(listUrls);
+    localStorage.setItem('urls', JSON.stringify(listUrls));
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!url) {
-      dispatch({ type: 'NO_VALUE' });
-    } else {
-      const id = state.urls.length
-        ? state.urls[state.urls.length - 1].id + 1
-        : 1;
-
-      const newUrl = { id, url };
-
-      dispatch({ type: 'ADD_URL', payload: newUrl });
-      setUrl('');
-    }
+    if (!newUrl) return;
+    addUrl(newUrl);
+    setNewUrl('');
   };
 
   return (
     <section className="  bg-Gray p-6">
       <div className="mx-auto my-12 max-w-6xl">
         <Form
-          url={url}
-          setUrl={setUrl}
+          newUrl={newUrl}
+          setNewUrl={setNewUrl}
           handleSubmit={handleSubmit}
-          errorStatus={state.errorStatus}
-          errorMessage={state.errorMessage}
         />
         <article className="mx-auto max-w-4xl py-8">
           <ul>
-            {state.urls.map((link, index) => {
-              console.log(link);
+            {urls.map((link, index) => {
               return (
                 <li
                   key={link.id}
                   className={`pl-4" flex flex-col justify-between rounded-md bg-white px-6 py-4 sm:flex-row sm:items-center sm:py-2 ${
-                    index === state.urls.length - 1
+                    index === urls.length - 1
                       ? 'mb-0'
                       : 'mb-4'
                   }`}
